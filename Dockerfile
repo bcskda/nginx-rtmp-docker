@@ -7,6 +7,7 @@ RUN apk add --no-cache \
   zlib
 
 COPY install_root/ /
+COPY nginx.conf /opt/nginx/conf/nginx.conf
 
 EXPOSE 80 1935
 ENTRYPOINT ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
